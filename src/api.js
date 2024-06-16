@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api"; // Update the URL if different
+const API_URL = "https://mernmoviebackend-7axe.onrender.com/api"; // Update the URL if different
 
 export const register = (userData) =>
   axios.post(`${API_URL}/auth/register`, userData);

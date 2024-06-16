@@ -7,6 +7,11 @@ export const FooterContainer = styled.footer`
   padding: 20px 0;
   width: 100%;
   bottom: 0;
+  position: relative; /* Ensure it stays at the bottom */
+
+  @media (max-width: 768px) {
+    padding: 15px 0;
+  }
 `;
 
 export const FooterText = styled.p`
@@ -22,5 +27,9 @@ export const FooterText = styled.p`
     &:hover {
       color: #007bff; /* Link color on hover */
     }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9em;
   }
 `;

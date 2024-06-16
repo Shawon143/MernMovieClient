@@ -59,17 +59,12 @@ export const FeaturedTitle = styled.h2`
 
 export const MoviesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  ); /* Adjusted width here */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   justify-items: center;
 `;
 
 export const FixedMovieCardContainer = styled.div`
-  width: 250px; /* Adjusted width here */
+  width: 250px; /* Fixed width for movie cards */
   height: 100%; /* Make sure the container takes full height */
 `;
-
-// Add styling for MovieCard component here if needed

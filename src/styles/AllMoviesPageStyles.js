@@ -1,4 +1,3 @@
-// src/styles/AllMoviesPageStyles.js
 import styled from "styled-components";
 
 export const AllMoviesContainer = styled.div`
@@ -15,9 +14,10 @@ export const AllMoviesTitle = styled.h1`
 
 export const FilterContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 15px; /* Add gap between elements */
+  gap: 15px;
   margin-bottom: 20px;
 `;
 
@@ -29,13 +29,13 @@ export const SearchContainer = styled.div`
 `;
 
 export const SearchBar = styled.input`
-  padding: 10px 20px; /* Increase padding for a modern look */
+  padding: 10px 20px;
   width: 300px;
   height: 40px;
   border: none;
   border-radius: 20px;
   font-size: 1rem;
-  transition: box-shadow 0.3s ease, transform 0.2s ease; /* Add transform for a smooth effect */
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
   background-color: #f8f8f8;
   color: #333;
   text-align: center;
@@ -44,12 +44,12 @@ export const SearchBar = styled.input`
   &:focus {
     outline: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px); /* Slightly move up on focus */
+    transform: translateY(-2px);
   }
 `;
 
 export const FilterDropdown = styled.select`
-  padding: 10px 20px; /* Match padding with search bar */
+  padding: 10px 20px;
   height: 40px;
   border: none;
   border-radius: 20px;
@@ -68,8 +68,24 @@ export const FilterDropdown = styled.select`
 
 export const MoviesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Create exactly 5 equal columns */
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-  justify-items: stretch; /* Ensure items stretch to fill the column */
-  align-items: start; /* Align items at the start of the row */
+  justify-items: stretch;
+  align-items: start;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
 `;

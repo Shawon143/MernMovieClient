@@ -1,4 +1,3 @@
-// src/components/styles/MovieCardStyles.js
 import styled from "styled-components";
 
 export const Card = styled.div`
@@ -9,7 +8,7 @@ export const Card = styled.div`
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  width: 100%; /* Ensure the card takes full width of the grid cell */
+  width: 100%;
 
   &:hover {
     transform: translateY(-5px);
@@ -33,7 +32,7 @@ export const MovieContent = styled.div`
 `;
 
 export const MovieTitle = styled.h2`
-  font-size: 1.5em;
+  font-size: 16px;
   margin: 0;
   color: #f8f8f8;
   text-transform: capitalize;

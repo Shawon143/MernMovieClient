@@ -4,13 +4,17 @@ export const MovieDetailContainer = styled.div`
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #222; /* Dark background */
-  color: #f8f8f8; /* Light text color */
+  background-color: #222;
+  color: #f8f8f8;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const MovieImage = styled.img`
@@ -74,35 +78,19 @@ export const RelatedMoviesTitle = styled.h2`
 
 export const RelatedMoviesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
-  justify-items: center;
-`;
+  justify-items: stretch;
 
-export const RelatedMovieCard = styled.div`
-  background-color: #333; /* Dark background for movie cards */
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-`;
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 
-export const RelatedMovieImage = styled.img`
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px 8px 0 0;
-`;
+  @media (max-width: 1023px) and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-export const RelatedMovieContent = styled.div`
-  padding: 10px;
-`;
-
-export const RelatedMovieTitle = styled.h3`
-  font-size: 1.2em;
-  margin: 10px 0;
-  color: #f8f8f8; /* Light text color */
-`;
-
-export const RelatedMovieGenre = styled.p`
-  font-size: 0.9em;
-  color: #f8f8f8; /* Light text color */
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;

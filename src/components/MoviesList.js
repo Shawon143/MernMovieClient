@@ -26,10 +26,7 @@ const MoviesList = () => {
       <MovieListTitle>Movies</MovieListTitle>
       {movies.map((movie) => (
         <MovieCard key={movie._id}>
-          <MovieCover
-            src={`http://localhost:5000/${movie.coverImage}`}
-            alt={movie.title}
-          />
+          <MovieCover src={movie.coverImage} alt={movie.title} />
           <MovieLink to={`/movie/${movie._id}`}>{movie.title}</MovieLink>
           <MovieDescription>
             {movie.description.substring(0, 100)}...

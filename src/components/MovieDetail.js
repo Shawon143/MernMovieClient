@@ -33,7 +33,7 @@ const MovieDetail = () => {
         const filteredMovies = response.data.filter(
           (mov) => mov.genre === movie.genre && mov._id !== movie._id
         );
-        setRelatedMovies(filteredMovies.slice(0, 3)); // Get first 3 related movies
+        setRelatedMovies(filteredMovies.slice(0, 5)); // Get first 5 related movies
       } catch (err) {
         console.error("Error fetching related movies:", err);
       }
@@ -70,16 +70,19 @@ const MovieDetail = () => {
             Watch Movie
           </S.MovieLink>
         </S.MovieContent>
-
-        <div>
-          <S.RelatedMoviesTitle>Related Movies</S.RelatedMoviesTitle>
+      </S.MovieDetailContainer>
+      <S.RelatedMoviesContainer>
+        <S.RelatedMoviesTitle>Related Movies</S.RelatedMoviesTitle>
+        {relatedMovies.length > 0 ? (
           <S.RelatedMoviesGrid>
             {relatedMovies.map((relatedMovie) => (
               <MovieCard key={relatedMovie._id} movie={relatedMovie} />
             ))}
           </S.RelatedMoviesGrid>
-        </div>
-      </S.MovieDetailContainer>
+        ) : (
+          <div>No related movies found.</div>
+        )}
+      </S.RelatedMoviesContainer>
     </div>
   );
 };

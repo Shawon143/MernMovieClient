@@ -8,6 +8,11 @@ export const NavbarContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const NavbarTitle = styled(NavLink)`
@@ -15,6 +20,10 @@ export const NavbarTitle = styled(NavLink)`
   text-decoration: none;
   font-size: 1.5rem;
   margin: 0 10px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
 `;
 
 export const NavbarLink = styled(NavLink)`
@@ -33,6 +42,12 @@ export const NavbarLink = styled(NavLink)`
   &:hover {
     background-color: #555;
   }
+
+  @media (max-width: 768px) {
+    margin: 5px 0;
+    width: 100%;
+    text-align: left;
+  }
 `;
 
 export const NavbarButton = styled.button`
@@ -46,5 +61,11 @@ export const NavbarButton = styled.button`
 
   &:hover {
     background-color: #555;
+  }
+
+  @media (max-width: 768px) {
+    margin: 5px 0;
+    width: 100%;
+    text-align: left;
   }
 `;
